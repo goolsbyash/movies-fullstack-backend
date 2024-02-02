@@ -3,6 +3,7 @@ import express from "express";
 import cors from 'cors';
 import morgan from 'morgan';
 import moviesRouter from './routes/movies.js';
+import usersRouter from './routes/users.js'
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({extended: true})); // allows data in url string
 
 // Routes
 app.use("/api/movies", moviesRouter);
+app.use("/api/users", usersRouter);
 
 app.get("/", (req, res) => {
   res.send("backend...");
